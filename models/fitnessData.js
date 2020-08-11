@@ -35,10 +35,14 @@ const workoutSchema = new Schema({
         type: Number,
         required: "Enter number of sets",
       },
+      distance: {
+        type: Number,
+        required: "Enter distance",
+      },
     },
   ],
 });
 
-const Transaction = mongoose.model("Transaction", transactionSchema);
+const Workout = mongoose.model("Workout", workoutSchema);
 
 module.exports = Workout;
