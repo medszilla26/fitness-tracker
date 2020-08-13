@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
@@ -14,8 +15,14 @@ app.use(express.static("public"));
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutDB", {
+let uri = "mongodb://localhost/workoutDB";
+if (process.env.NODE_ENV === "production") {
+  uri = process.env.MONGODB_URI;
+}
+
+mongoose.connect(uri, {
   useNewUrlParser: true,
+  useFindAndModify: true,
 });
 
 app.listen(PORT, () => {
