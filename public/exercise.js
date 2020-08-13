@@ -55,15 +55,19 @@ function validateInputs() {
     if (nameInput.value.trim() === "") {
       isValid = false;
     }
+
     if (weightInput.value.trim() === "") {
       isValid = false;
     }
+
     if (setsInput.value.trim() === "") {
       isValid = false;
     }
+
     if (repsInput.value.trim() === "") {
       isValid = false;
     }
+
     if (resistanceDurationInput.value.trim() === "") {
       isValid = false;
     }
@@ -71,13 +75,16 @@ function validateInputs() {
     if (cardioNameInput.value.trim() === "") {
       isValid = false;
     }
+
     if (durationInput.value.trim() === "") {
       isValid = false;
     }
+
     if (distanceInput.value.trim() === "") {
       isValid = false;
     }
   }
+
   if (isValid) {
     completeButton.removeAttribute("disabled");
     addButton.removeAttribute("disabled");

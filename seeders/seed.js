@@ -127,11 +127,9 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Bench Press",
+        name: "Bench",
         duration: 30,
-        weight: 250,
-        reps: 15,
-        sets: 3,
+        distance: 2,
       },
     ],
   },
@@ -144,6 +142,6 @@ db.Workout.deleteMany({})
     process.exit(0);
   })
   .catch((err) => {
-    console.log(err);
+    console.error(err);
     process.exit(1);
   });
