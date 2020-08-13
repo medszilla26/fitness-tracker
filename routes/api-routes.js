@@ -1,4 +1,4 @@
-// const router = require("express").Router();
+const router = require("express").Router();
 const Workout = require("../models/fitnessData.js");
 
 module.exports = (router) => {
@@ -7,7 +7,7 @@ module.exports = (router) => {
   });
 
   router.post("/api/workouts", (req, res) => {
-    Workout.create(body)
+    Workout.create({})
       .then((dbWorkout) => {
         res.json(dbWorkout);
       })
