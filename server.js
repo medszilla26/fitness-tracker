@@ -15,9 +15,11 @@ app.use(express.static("public"));
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
-let uri = "mongodb://localhost/workoutDB";
+// let uri = "mongodb://localhost/workoutDB";
+let uri = process.env.MONGOD_URI;
+console.log(uri);
 if (process.env.NODE_ENV === "production") {
-  uri = process.env.MONGODB_URI;
+  uri = process.env.MONGOD_URI;
 }
 
 mongoose.connect(uri, {
